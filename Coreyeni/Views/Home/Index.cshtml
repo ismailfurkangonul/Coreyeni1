@@ -1,0 +1,92 @@
+﻿@using Coreyeni.Data.Entities
+@model List<Product>
+<html>
+    <head>
+        <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css"rel="stylesheet" />
+        <link href="/node_modules/font-awesome/css/font-awesome.css"rel="stylesheet" />
+        <link href="~/twitter-bootstrap/css/bootstrap.css"rel="stylesheet" />
+
+
+
+    </head>
+    <body>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-12 m3 mt-3">
+                <a href="/Product/Add" class="btn btn-primary">yeni ekle</a>
+
+
+
+            </div>
+
+            <div class="col-md-12">
+
+                <table class="table table-striped">
+
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Adı</th>
+                            <th>Fiyatı</th>
+                            <th></th>
+
+
+
+
+                        </tr>
+
+                    </thead>
+                   
+                    <tbody>
+
+                        @foreach (Product item in Model)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.Name</td>
+                                <td>@item.Price</td>
+                                <td>
+                                    <a href="/Product/DeleteProduct?Id=@item.Id" class="btn btn-danger">Sil</a>
+                                    <a href="/Product/UpdateProduct?Id=@item.Id" class="btn-sm btn-success ml-1">Guncelle</a>
+                                    
+                                </td>
+
+
+                            </tr>
+
+
+
+                        }
+                    </tbody>
+
+
+
+
+                </table>
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+    </body>
+
+
+
+
+</html>
